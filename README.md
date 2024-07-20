@@ -7,22 +7,28 @@
 ```
 tail -n +10 README.md
 ```
-ここが 10 行目。
+※ここが 10 行目。この行以降が表示されるはず。
 
-## コメント
+- コメント
 
-先頭 9 行は表示しない、とかあるがそれだと入力が 9 なのか 10 なのかわかりにくいので簡潔に書く。
+  検索すると、先頭 9 行は表示しないとか色々出てくるが、それだと入力が 9 なのか 10 なのかわかりにくいしそもそも読みづらい。
+
+  とにかく簡潔に書く。
 
 ## git commit時に user.nameと user.email を指定する。
 
 指定しないで git commit しようとすると、
+
 > git config --global user.name "Your Name"
 > git config --global user.email "you@example.com"
-が、他にたとえば以下の方法 1 がある。
 
-- 方法1
+という出力が出る。コミットは出来ない。
+
+git config --global してもよいが、他にたとえば以下の方法がある。
+
+- 方法
   - git -c user.name='foobar' -c user.email='foobar@example.com' commit -m '...'
-    - 都度指定が必要。alias とかするとよいかも。
+    - git commit 時に毎度指定が必要ではある。alias とかするとよいかも。
 - 方法2
   ```
   git config --global user.name "Your Name"
